@@ -31,7 +31,7 @@ jobs:
       # 4. Compila o projeto para Web em modo release (otimizado para produção)
       # --base-href=/ garante que os links internos funcionem corretamente no Vercel
       - name: Build Flutter Web
-        run: flutter build web --release --base-href=/ --no-wasm
+        run: flutter build web --release --base-href=/
 
       # 5. Faz o deploy da pasta build/web para o Vercel
       - name: Deploy para Vercel
