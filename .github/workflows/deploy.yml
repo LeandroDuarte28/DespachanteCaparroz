@@ -27,6 +27,10 @@ jobs:
       - name: Build Flutter Web
         run: flutter build web --release --base-href=/
 
+      - name: Criar vercel.json na pasta de build
+        run: |
+          echo "{\"version\":2,\"buildCommand\":null,\"outputDirectory\":\".\",\"installCommand\":null,\"framework\":null,\"routes\":[{\"handle\":\"filesystem\"},{\"src\":\"/(.*)\",\"dest\":\"/index.html\"}]}" > ./build/web/vercel.json
+
       - name: Instalar Vercel CLI
         run: npm install -g vercel@latest
 
