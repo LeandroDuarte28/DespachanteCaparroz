@@ -30,6 +30,10 @@ jobs:
       - name: Instalar Vercel CLI
         run: npm install -g vercel@latest
 
+      - name: Link projeto Vercel
+        run: vercel link --yes --token=${{ secrets.VERCEL_TOKEN }} --project=caparroz --scope=despachantecaparroz
+        working-directory: ./build/web
+
       - name: Deploy para Vercel
         run: vercel deploy ./build/web --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
