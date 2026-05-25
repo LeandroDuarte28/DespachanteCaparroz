@@ -30,16 +30,8 @@ jobs:
       - name: Instalar Vercel CLI
         run: npm install -g vercel@latest
 
-      - name: Criar config Vercel
-        run: |
-          mkdir -p ./build/web/.vercel
-          printf "{\"projectId\":\"%s\",\"orgId\":\"%s\"}" "$VERCEL_PROJECT_ID" "$VERCEL_ORG_ID" > ./build/web/.vercel/project.json
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
       - name: Deploy para Vercel
-        run: vercel deploy ./build/web --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
+        run: vercel deploy ./build/web --prod --token=${{ secrets.VERCEL_TOKEN }} --yes --project=${{ secrets.VERCEL_PROJECT_ID }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
