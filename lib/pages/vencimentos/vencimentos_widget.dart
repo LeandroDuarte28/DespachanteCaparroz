@@ -81,13 +81,7 @@ class _VencimentosWidgetState extends State<VencimentosWidget>
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.white,
-      body: Visibility(
-        visible: responsiveVisibility(
-          context: context,
-          phone: false,
-          tablet: false,
-        ),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -1740,7 +1734,7 @@ class _VencimentosWidgetState extends State<VencimentosWidget>
                 ),
               Container(
                 width: double.infinity,
-                height: 113.4,
+                
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondary,
                 ),
