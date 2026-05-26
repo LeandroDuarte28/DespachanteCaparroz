@@ -1364,7 +1364,6 @@ class _MultasWidgetState extends State<MultasWidget>
             ],
           ),
         ),
-      ),
     );
   }
 }

@@ -1748,7 +1748,6 @@ class _IpvaWidgetState extends State<IpvaWidget> with TickerProviderStateMixin {
             ],
           ),
         ),
-      ),
     );
   }
 }

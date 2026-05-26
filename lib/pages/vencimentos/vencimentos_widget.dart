@@ -1747,7 +1747,6 @@ class _VencimentosWidgetState extends State<VencimentosWidget>
             ],
           ),
         ),
-      ),
     );
   }
 }

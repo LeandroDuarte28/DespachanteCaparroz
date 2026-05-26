@@ -1569,7 +1569,6 @@ class _SeguroWidgetState extends State<SeguroWidget>
             ],
           ),
         ),
-      ),
     );
   }
 }

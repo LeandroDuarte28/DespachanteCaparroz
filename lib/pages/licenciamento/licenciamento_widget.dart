@@ -1937,7 +1937,6 @@ class _LicenciamentoWidgetState extends State<LicenciamentoWidget>
             ],
           ),
         ),
-      ),
     );
   }
 }
