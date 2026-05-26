@@ -60,20 +60,17 @@ class _ConsultaDebitosSemLoginWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        Container(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Container(
+          width: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             boxShadow: [
               BoxShadow(
                 blurRadius: 2.0,
                 color: Color(0x33000000),
-                offset: Offset(
-                  0.0,
-                  2.0,
-                ),
+                offset: Offset(0.0, 2.0),
               )
             ],
           ),
@@ -133,7 +130,7 @@ class _ConsultaDebitosSemLoginWidgetState
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      width: 316.0,
+                      width: double.infinity,
                       height: 45.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -252,7 +249,7 @@ class _ConsultaDebitosSemLoginWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 316.0,
+                          width: double.infinity,
                           height: 45.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
@@ -376,7 +373,7 @@ class _ConsultaDebitosSemLoginWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 316.0,
+                          width: double.infinity,
                           height: 45.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
@@ -501,7 +498,7 @@ class _ConsultaDebitosSemLoginWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 316.0,
+                          width: double.infinity,
                           height: 45.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
@@ -688,7 +685,7 @@ class _ConsultaDebitosSemLoginWidgetState
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 }

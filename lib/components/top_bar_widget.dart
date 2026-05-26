@@ -698,8 +698,8 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.asset(
                                     'assets/images/logo.png',
-                                    width: 87.9,
-                                    height: 114.85,
+                                    width: 60,
+                                    height: 80,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
