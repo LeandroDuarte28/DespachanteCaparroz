@@ -2634,8 +2634,8 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                       debits: FFAppState()
                                                                           .debitIDs,
                                                                       totalAmount:
-                                                                          FFAppState().valInt +
-                                                                          FFAppState().valIntServiceAmount,
+                                                                          FFAppState()
+                                                                              .valInt,
                                                                       serviceAmount:
                                                                           FFAppState()
                                                                               .valIntServiceAmount,
@@ -2653,7 +2653,7 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                     if ((_model
                                                                             .pagamentos
                                                                             ?.succeeded ??
-                                                                        false)) {
+                                                                        true)) {
                                                                       FFAppState()
                                                                               .url =
                                                                           PagamentoDebitosCall
@@ -4894,8 +4894,8 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                             debits: FFAppState()
                                                                 .debitIDs,
                                                             totalAmount:
-                                                                          FFAppState().valInt +
-                                                                          FFAppState().valIntServiceAmount,
+                                                                FFAppState()
+                                                                    .valInt,
                                                             serviceAmount:
                                                                 FFAppState()
                                                                     .valIntServiceAmount,
@@ -4913,7 +4913,7 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                           if ((_model
                                                                   .pagamentosXQ
                                                                   ?.succeeded ??
-                                                              false)) {
+                                                              true)) {
                                                             FFAppState().url =
                                                                 PagamentoDebitosCall
                                                                     .url(
@@ -4968,8 +4968,6 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                         .routeName,
                                                                     context
                                                                         .mounted);
-                                                          
-                                                            _navigate();
                                                           } else {
                                                             await showDialog(
                                                               context: context,
@@ -4996,6 +4994,8 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                               },
                                                             );
                                                           }
+
+                                                          _navigate();
 
                                                           safeSetState(() {});
                                                         },
