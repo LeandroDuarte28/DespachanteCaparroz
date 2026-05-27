@@ -24,20 +24,22 @@ class ConsultaHashCall {
   "license_plate": "${licensePlate}",
   "callback_url": "http://www.suaurl.com/callback?transaction_id=123"
 }''';
+    debugPrint('[API] ConsultaHashCall body:\n$ffApiRequestBody');
     return ApiManager.instance.makeApiCall(
       callName: 'ConsultaHash',
       apiUrl:
           'https://integrador.pinpag.com.br/web-despachantes/debits',
       callType: ApiCallType.POST,
       headers: {
+        'Content-Type': 'application/json',
         'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
       },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
-      encodeBodyUtf8: true,
-      decodeUtf8: false,
+      encodeBodyUtf8: false,
+      decodeUtf8: true,
       cache: false,
       isStreamingApi: false,
       alwaysAllowBody: false,
