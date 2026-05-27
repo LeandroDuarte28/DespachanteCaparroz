@@ -2555,11 +2555,10 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                     )!;
                                                                     safeSetState(
                                                                         () {});
-                                                                    // ── service_amount fixo = 2800 (representa R$ 28,00) ──
                                                                     FFAppState()
                                                                             .serviceAmount =
                                                                         functions
-                                                                            .converteInt('2800')!;
+                                                                            .converteInt('02800')!;
                                                                     safeSetState(
                                                                         () {});
                                                                     FFAppState()
@@ -2583,7 +2582,25 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                         'http://caparroz.com.br/';
                                                                     safeSetState(
                                                                         () {});
-                                                                    // ── total_amount = soma_debitos + service_amount ──
+                                                                    await showDialog(
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (alertDialogContext) {
+                                                                        return AlertDialog(
+                                                                          title:
+                                                                              Text('Valor'),
+                                                                          content:
+                                                                              Text(FFAppState().valor),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                              child: Text('Ok'),
+                                                                            ),
+                                                                          ],
+                                                                        );
+                                                                      },
+                                                                    );
                                                                     FFAppState().valor = functions
                                                                         .somaDoisValoresDevolvInt(
                                                                             FFAppState().valor,
@@ -2603,28 +2620,6 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                             .converteParaInteiro(FFAppState().serviceAmount)!;
                                                                     safeSetState(
                                                                         () {});
-                                                                    // ── DEBUG LOGS antes de chamar calculate-installments ──
-                                                                    debugPrint('====== [DESKTOP] calculate-installments ======');
-                                                                    debugPrint('[DEBUG] debitIDs selecionados  : ${FFAppState().debitIDs}');
-                                                                    debugPrint('[DEBUG] soma dos debitos       : ${FFAppState().valor}');
-                                                                    debugPrint('[DEBUG] service_amount         : ${FFAppState().serviceAmount}');
-                                                                    debugPrint('[DEBUG] total_amount (valInt)  : ${FFAppState().valInt}');
-                                                                    debugPrint('[DEBUG] valIntServiceAmount    : ${FFAppState().valIntServiceAmount}');
-                                                                    debugPrint('[DEBUG] consult_id             : ${FFAppState().CodTemporario}');
-                                                                    debugPrint('[DEBUG] name                   : ${FFAppState().name}');
-                                                                    debugPrint('[DEBUG] document (CPF input)   : ${_model.inputCPFTextController.text}');
-                                                                    debugPrint('[DEBUG] intermediaryDocument   : ${FFAppState().intermediaryDocument}');
-                                                                    debugPrint('[DEBUG] JSON body enviado:');
-                                                                    debugPrint('''  {
-    "consult_id": "${FFAppState().CodTemporario}",
-    "name": "${FFAppState().name}",
-    "document": "${_model.inputCPFTextController.text}",
-    "debits": ${FFAppState().debitIDs},
-    "service_amount": ${FFAppState().valIntServiceAmount},
-    "total_amount": ${FFAppState().valInt},
-    "intermediary_document": "${FFAppState().intermediaryDocument}"
-  }''');
-                                                                    debugPrint('==============================================');
                                                                     _model.pagamentos =
                                                                         await PagamentoDebitosCall
                                                                             .call(
@@ -2639,8 +2634,8 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                       debits: FFAppState()
                                                                           .debitIDs,
                                                                       totalAmount:
-                                                                          FFAppState()
-                                                                              .valInt,
+                                                                          FFAppState().valInt +
+                                                                          FFAppState().valIntServiceAmount,
                                                                       serviceAmount:
                                                                           FFAppState()
                                                                               .valIntServiceAmount,
@@ -2658,7 +2653,7 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                     if ((_model
                                                                             .pagamentos
                                                                             ?.succeeded ??
-                                                                        true)) {
+                                                                        false)) {
                                                                       FFAppState()
                                                                               .url =
                                                                           PagamentoDebitosCall
@@ -4837,11 +4832,10 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                           )!;
                                                           safeSetState(() {});
                                                           FFAppState()
-                                                                  // ── service_amount fixo = 2800 (representa R$ 28,00) ──
                                                                   .serviceAmount =
                                                               functions
                                                                   .converteInt(
-                                                                      '2800')!;
+                                                                      '10000')!;
                                                           safeSetState(() {});
                                                           FFAppState()
                                                                   .debitIDs =
@@ -4855,13 +4849,12 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                           safeSetState(() {});
                                                           FFAppState()
                                                                   .callbackURL =
-                                                              'https://caparroz-nine.vercel.app/';
+                                                              'https://www.uol.com.br';
                                                           safeSetState(() {});
                                                           FFAppState()
                                                                   .redirectURL =
-                                                              'https://caparroz-nine.vercel.app/';
+                                                              'https://www.uol.com.br';
                                                           safeSetState(() {});
-                                                          // ── total_amount = soma_debitos + service_amount ──
                                                           FFAppState().valor = functions
                                                               .somaDoisValoresDevolvInt(
                                                                   FFAppState()
@@ -4887,28 +4880,6 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                   2000,
                                                             ),
                                                           );
-                                                          // ── DEBUG LOGS antes de chamar calculate-installments ──
-                                                          debugPrint('====== [MOBILE] calculate-installments ======');
-                                                          debugPrint('[DEBUG] debitIDs selecionados  : ${FFAppState().debitIDs}');
-                                                          debugPrint('[DEBUG] soma dos debitos       : ${FFAppState().valor}');
-                                                          debugPrint('[DEBUG] service_amount         : ${FFAppState().serviceAmount}');
-                                                          debugPrint('[DEBUG] total_amount (valInt)  : ${FFAppState().valInt}');
-                                                          debugPrint('[DEBUG] valIntServiceAmount    : ${FFAppState().valIntServiceAmount}');
-                                                          debugPrint('[DEBUG] consult_id             : ${FFAppState().CodTemporario}');
-                                                          debugPrint('[DEBUG] name                   : ${FFAppState().name}');
-                                                          debugPrint('[DEBUG] document (CPF input)   : ${_model.inputCPFXTextController.text}');
-                                                          debugPrint('[DEBUG] intermediaryDocument   : ${FFAppState().intermediaryDocument}');
-                                                          debugPrint('[DEBUG] JSON body enviado:');
-                                                          debugPrint('''  {
-    "consult_id": "${FFAppState().CodTemporario}",
-    "name": "${FFAppState().name}",
-    "document": "${_model.inputCPFXTextController.text}",
-    "debits": ${FFAppState().debitIDs},
-    "service_amount": ${FFAppState().valIntServiceAmount},
-    "total_amount": ${FFAppState().valInt},
-    "intermediary_document": "${FFAppState().intermediaryDocument}"
-  }''');
-                                                          debugPrint('=============================================');
                                                           _model.pagamentosXQ =
                                                               await PagamentoDebitosCall
                                                                   .call(
@@ -4923,8 +4894,8 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                             debits: FFAppState()
                                                                 .debitIDs,
                                                             totalAmount:
-                                                                FFAppState()
-                                                                    .valInt,
+                                                                          FFAppState().valInt +
+                                                                          FFAppState().valIntServiceAmount,
                                                             serviceAmount:
                                                                 FFAppState()
                                                                     .valIntServiceAmount,
@@ -4942,7 +4913,7 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                           if ((_model
                                                                   .pagamentosXQ
                                                                   ?.succeeded ??
-                                                              true)) {
+                                                              false)) {
                                                             FFAppState().url =
                                                                 PagamentoDebitosCall
                                                                     .url(
@@ -4997,6 +4968,8 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                         .routeName,
                                                                     context
                                                                         .mounted);
+                                                          
+                                                            _navigate();
                                                           } else {
                                                             await showDialog(
                                                               context: context,
@@ -5023,8 +4996,6 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                               },
                                                             );
                                                           }
-
-                                                          _navigate();
 
                                                           safeSetState(() {});
                                                         },
