@@ -178,28 +178,26 @@ class PagamentoDebitosCall {
     dynamic? stringJSONJson,
   }) async {
     // Montar array JSON de debits a partir da string "id1,id2,id3"
-    // separando por vírgula, limpando espaços e aspas extras, e envolvendo cada item em aspas
     final debitsList = (debits ?? '')
         .split(',')
         .map((s) => s.trim().replaceAll('"', ''))
         .where((s) => s.isNotEmpty)
-        .map((s) => '"\$s"')
+        .map((s) => '"$s"')
         .join(',');
-    final debitsArray = '[\$debitsList]';
+    final debitsArray = '[$debitsList]';
 
-    // total_amount e service_amount DEVEM ser integers (sem aspas) no JSON
-    final ffApiRequestBody = '''
-{
-  "consult_id": "${codTemporario}",
-  "name": "${name}",
-  "document": "${document}",
-  "debits": \$debitsArray,
-  "service_amount": ${serviceAmount},
-  "total_amount": ${totalAmount},
-  "intermediary_document": "${intermediaryDocument}",
-  "callback_url": "${callbackUrl}",
-  "redirect_url": "${redirectUrl}"
-}''';
+    // Usar concatenação simples para garantir que $debitsArray seja interpolado corretamente
+    final ffApiRequestBody = '{'
+        '"consult_id": "$codTemporario",'
+        '"name": "$name",'
+        '"document": "$document",'
+        '"debits": $debitsArray,'
+        '"service_amount": $serviceAmount,'
+        '"total_amount": $totalAmount,'
+        '"intermediary_document": "$intermediaryDocument",'
+        '"callback_url": "$callbackUrl",'
+        '"redirect_url": "$redirectUrl"'
+        '}';
     debugPrint('[API] PagamentoDebitosCall body:\n$ffApiRequestBody');
     return ApiManager.instance.makeApiCall(
       callName: 'PagamentoDebitos',
