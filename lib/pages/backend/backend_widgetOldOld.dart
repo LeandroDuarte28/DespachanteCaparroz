@@ -1115,26 +1115,6 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                     FFButtonWidget(
                                                                   onPressed:
                                                                       () async {
-                                                                    // ── Validação: CPF/CNPJ obrigatório ──
-                                                                    final cpfValDesktop = _model.inputCPFTextController.text.replaceAll(RegExp(r'[^0-9]'), '');
-                                                                    if (cpfValDesktop.isEmpty || (cpfValDesktop.length != 11 && cpfValDesktop.length != 14)) {
-                                                                      await showDialog(
-                                                                        context: context,
-                                                                        builder: (ctx) => AlertDialog(
-                                                                          title: const Text('CPF/CNPJ inválido'),
-                                                                          content: const Text('Informe um CPF (11 dígitos) ou CNPJ (14 dígitos) válido antes de consultar.'),
-                                                                          actions: [TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Ok'))],
-                                                                        ),
-                                                                      );
-                                                                      return;
-                                                                    }
-                                                                    // ── Placa em maiúsculas ──
-                                                                    final placaDesktopTratada = _model.inputPlacaTextController.text.toUpperCase().replaceAll(RegExp(r'[^A-Z0-9]'), '');
-                                                                    safeSetState(() {
-                                                                      _model.inputPlacaTextController?.text = placaDesktopTratada;
-                                                                    });
-                                                                    debugPrint('[DEBUG] Placa enviada (desktop): $placaDesktopTratada');
-                                                                    debugPrint('[DEBUG] CPF/CNPJ enviado (desktop): $cpfValDesktop');
                                                                     _model.resultHash =
                                                                         await ConsultaHashCall
                                                                             .call(
@@ -1144,7 +1124,9 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                       uf: _model
                                                                           .inputEstadoTextController
                                                                           .text,
-                                                                      licensePlate: placaDesktopTratada,
+                                                                      licensePlate: _model
+                                                                          .inputPlacaTextController
+                                                                          .text,
                                                                     );
 
                                                                     FFAppState()
@@ -3848,26 +3830,6 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                     0.0),
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
-                                                            // ── Validação: CPF/CNPJ obrigatório ──
-                                                            final cpfValMobile = _model.inputCPFXTextController.text.replaceAll(RegExp(r'[^0-9]'), '');
-                                                            if (cpfValMobile.isEmpty || (cpfValMobile.length != 11 && cpfValMobile.length != 14)) {
-                                                              await showDialog(
-                                                                context: context,
-                                                                builder: (ctx) => AlertDialog(
-                                                                  title: const Text('CPF/CNPJ inválido'),
-                                                                  content: const Text('Informe um CPF (11 dígitos) ou CNPJ (14 dígitos) válido antes de consultar.'),
-                                                                  actions: [TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Ok'))],
-                                                                ),
-                                                              );
-                                                              return;
-                                                            }
-                                                            // ── Placa em maiúsculas ──
-                                                            final placaMobileTratada = _model.inputPlacaXTextController.text.toUpperCase().replaceAll(RegExp(r'[^A-Z0-9]'), '');
-                                                            safeSetState(() {
-                                                              _model.inputPlacaXTextController?.text = placaMobileTratada;
-                                                            });
-                                                            debugPrint('[DEBUG] Placa enviada (mobile): $placaMobileTratada');
-                                                            debugPrint('[DEBUG] CPF/CNPJ enviado (mobile): $cpfValMobile');
                                                             _model.resultHashX =
                                                                 await ConsultaHashCall
                                                                     .call(
@@ -3875,7 +3837,9 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                   .inputRenavamXTextController
                                                                   .text,
                                                               uf: 'SP',
-                                                              licensePlate: placaMobileTratada,
+                                                              licensePlate: _model
+                                                                  .inputPlacaXTextController
+                                                                  .text,
                                                             );
 
                                                             FFAppState()

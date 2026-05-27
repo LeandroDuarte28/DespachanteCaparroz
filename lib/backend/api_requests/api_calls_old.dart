@@ -27,10 +27,10 @@ class ConsultaHashCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ConsultaHash',
       apiUrl:
-          'https://integrador.homolog.pinpag.com.br/web-despachantes/debits',
+          'https://integrador.pinpag.com.br/web-despachantes/debits',
       callType: ApiCallType.POST,
       headers: {
-        'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
+        'x-api-key': 'v6Bo5J1Roh7sNcqzeoynraH6J50L5ddH1kgVzrZf',
       },
       params: {},
       body: ffApiRequestBody,
@@ -57,11 +57,11 @@ class ConsultaDebitosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ConsultaDebitos',
       apiUrl:
-          'https://integrador.homolog.pinpag.com.br/web-despachantes/debits',
+          'https://integrador.pinpag.com.br/web-despachantes/debits',
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
+        'x-api-key': 'v6Bo5J1Roh7sNcqzeoynraH6J50L5ddH1kgVzrZf',
       },
       params: {
         'consult_id': codTemporario,
@@ -167,7 +167,7 @@ class PagamentoDebitosCall {
     String? codTemporario = '',
     String? name = '',
     String? document = '',
-    String? debits = '',       // já vem formatado como ["id1","id2"] via aspasDuplas()
+    String? debits = '',
     int? totalAmount,
     int? serviceAmount,
     String? intermediaryDocument = '',
@@ -175,29 +175,28 @@ class PagamentoDebitosCall {
     String? redirectUrl = '',
     dynamic? stringJSONJson,
   }) async {
-    // total_amount e service_amount DEVEM ser integers (sem aspas) no JSON.
-    // debits DEVE ser um array JSON real — o valor já vem pré-formatado como ["id1","id2"].
+    final stringJSON = _serializeJson(stringJSONJson);
     final ffApiRequestBody = '''
 {
   "consult_id": "${codTemporario}",
   "name": "${name}",
   "document": "${document}",
-  "debits": ${debits},
-  "service_amount": ${serviceAmount},
-  "total_amount": ${totalAmount},
+  "debits": [
+    "${debits}"
+  ],
+  "total_amount": "${totalAmount}",
+  "service_amount": "${serviceAmount}",
   "intermediary_document": "${intermediaryDocument}",
   "callback_url": "${callbackUrl}",
   "redirect_url": "${redirectUrl}"
 }''';
-    debugPrint('[API] PagamentoDebitosCall body:\n$ffApiRequestBody');
     return ApiManager.instance.makeApiCall(
       callName: 'PagamentoDebitos',
-      apiUrl:
-          'https://integrador.homolog.pinpag.com.br/web-despachantes/calculate-installments',
+      apiUrl: 'https://integrador.pinpag.com.br/web-despachantes/calculate-installments',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
+        'x-api-key': 'v6Bo5J1Roh7sNcqzeoynraH6J50L5ddH1kgVzrZf',
       },
       params: {},
       body: ffApiRequestBody,
