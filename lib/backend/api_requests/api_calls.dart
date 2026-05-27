@@ -27,10 +27,10 @@ class ConsultaHashCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ConsultaHash',
       apiUrl:
-          'https://integrador.homolog.pinpag.com.br/web-despachantes/debits',
+          'https://integrador.pinpag.com.br/web-despachantes/debits',
       callType: ApiCallType.POST,
       headers: {
-        'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
+        'x-api-key': 'v6Bo5J1Roh7sNcqzeoynraH6J50L5ddH1kgVzrZf',
       },
       params: {},
       body: ffApiRequestBody,
@@ -57,11 +57,11 @@ class ConsultaDebitosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ConsultaDebitos',
       apiUrl:
-          'https://integrador.homolog.pinpag.com.br/web-despachantes/debits',
+          'https://integrador.pinpag.com.br/web-despachantes/debits',
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
+        'x-api-key': 'v6Bo5J1Roh7sNcqzeoynraH6J50L5ddH1kgVzrZf',
       },
       params: {
         'consult_id': codTemporario,
@@ -192,11 +192,11 @@ class PagamentoDebitosCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'PagamentoDebitos',
-      apiUrl: 'https://webhook.site/aa2cb511-cacc-42f9-b143-4244869556bc',
+      apiUrl: 'https://integrador.pinpag.com.br/web-despachantes/calculate-installments',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
+        'x-api-key': 'v6Bo5J1Roh7sNcqzeoynraH6J50L5ddH1kgVzrZf',
       },
       params: {},
       body: ffApiRequestBody,
