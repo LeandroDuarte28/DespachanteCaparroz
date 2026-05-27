@@ -32,7 +32,7 @@ class ConsultaHashCall {
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
+        'x-api-key': 'v6Bo5J1Roh7sNcqzeoynraH6J50L5ddH1kgVzrZf',
       },
       params: {},
       body: ffApiRequestBody,
@@ -63,7 +63,7 @@ class ConsultaDebitosCall {
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
+        'x-api-key': 'v6Bo5J1Roh7sNcqzeoynraH6J50L5ddH1kgVzrZf',
       },
       params: {
         'consult_id': codTemporario,
@@ -199,7 +199,7 @@ class PagamentoDebitosCall {
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
+        'x-api-key': 'v6Bo5J1Roh7sNcqzeoynraH6J50L5ddH1kgVzrZf',
       },
       params: {},
       body: ffApiRequestBody,
