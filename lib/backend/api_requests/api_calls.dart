@@ -27,7 +27,7 @@ class ConsultaHashCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ConsultaHash',
       apiUrl:
-          'https://integrador.homolog.pinpag.com.br/web-despachantes/debits',
+          'https://integrador.pinpag.com.br/web-despachantes/debits',
       callType: ApiCallType.POST,
       headers: {
         'x-api-key': 'pBnuGMgIO5aevXGbVonf75K7O7KRrvjK4Z4Zj7CL',
@@ -57,7 +57,7 @@ class ConsultaDebitosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ConsultaDebitos',
       apiUrl:
-          'https://integrador.homolog.pinpag.com.br/web-despachantes/debits',
+          'https://integrador.pinpag.com.br/web-despachantes/debits',
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',
@@ -193,7 +193,7 @@ class PagamentoDebitosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'PagamentoDebitos',
       apiUrl:
-          'https://integrador.homolog.pinpag.com.br/web-despachantes/calculate-installments',
+          'https://integrador.pinpag.com.br/web-despachantes/calculate-installments',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
