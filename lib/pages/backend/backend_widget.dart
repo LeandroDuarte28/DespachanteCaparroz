@@ -2561,25 +2561,6 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                             .converteInt('02800')!;
                                                                     safeSetState(
                                                                         () {});
-                                                                    await showDialog(
-                                                                      context:
-                                                                          context,
-                                                                      builder:
-                                                                          (alertDialogContext) {
-                                                                        return AlertDialog(
-                                                                          title:
-                                                                              Text('ServiceAmount'),
-                                                                          content:
-                                                                              Text(FFAppState().serviceAmount),
-                                                                          actions: [
-                                                                            TextButton(
-                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: Text('Ok'),
-                                                                            ),
-                                                                          ],
-                                                                        );
-                                                                      },
-                                                                    );
                                                                     FFAppState()
                                                                             .debitIDs =
                                                                         functions
@@ -2639,24 +2620,6 @@ class _BackendWidgetState extends State<BackendWidget> {
                                                                             .converteParaInteiro(FFAppState().serviceAmount)!;
                                                                     safeSetState(
                                                                         () {});
-                                                                    await showDialog(
-                                                                      context:
-                                                                          context,
-                                                                      builder:
-                                                                          (alertDialogContext) {
-                                                                        return AlertDialog(
-                                                                          content: Text(FFAppState()
-                                                                              .valInt
-                                                                              .toString()),
-                                                                          actions: [
-                                                                            TextButton(
-                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: Text('Ok'),
-                                                                            ),
-                                                                          ],
-                                                                        );
-                                                                      },
-                                                                    );
                                                                     _model.pagamentos =
                                                                         await PagamentoDebitosCall
                                                                             .call(
