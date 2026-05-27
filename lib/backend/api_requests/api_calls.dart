@@ -177,14 +177,23 @@ class PagamentoDebitosCall {
     String? redirectUrl = '',
     dynamic? stringJSONJson,
   }) async {
-    // total_amount e service_amount DEVEM ser integers (sem aspas) no JSON.
-    // debits DEVE ser um array JSON real — o valor já vem pré-formatado como ["id1","id2"].
+    // Montar array JSON de debits a partir da string "id1,id2,id3"
+    // separando por vírgula, limpando espaços e aspas extras, e envolvendo cada item em aspas
+    final debitsList = (debits ?? '')
+        .split(',')
+        .map((s) => s.trim().replaceAll('"', ''))
+        .where((s) => s.isNotEmpty)
+        .map((s) => '"\$s"')
+        .join(',');
+    final debitsArray = '[\$debitsList]';
+
+    // total_amount e service_amount DEVEM ser integers (sem aspas) no JSON
     final ffApiRequestBody = '''
 {
   "consult_id": "${codTemporario}",
   "name": "${name}",
   "document": "${document}",
-  "debits": ${debits},
+  "debits": \$debitsArray,
   "service_amount": ${serviceAmount},
   "total_amount": ${totalAmount},
   "intermediary_document": "${intermediaryDocument}",
