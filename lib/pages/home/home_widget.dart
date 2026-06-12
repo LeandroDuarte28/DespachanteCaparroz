@@ -252,36 +252,21 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
   // ─── Quem Somos ───────────────────────────────────────────────────────
   Widget _buildQuemSomos(BuildContext context) {
-    return LayoutBuilder(builder: (context, c) {
-      final isMobile = c.maxWidth < 700;
-      final texto = _buildQuemSomosTexto();
-      final consulta = wrapWithModel(
-        model: _model.consultaDebitosSemLoginModel1,
-        updateCallback: () => safeSetState(() {}),
-        child: const ConsultaDebitosSemLoginWidget(),
-      );
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _sectionBadge('Nossa História'),
-          _sectionTitle('Quem Somos'),
-          isMobile
-              ? Column(children: [
-                  consulta,
-                  const SizedBox(height: 24),
-                  texto,
-                ])
-              : Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(flex: 3, child: texto),
-                    const SizedBox(width: 32),
-                    Expanded(flex: 2, child: consulta),
-                  ],
-                ),
-        ],
-      );
-    });
+    final texto = _buildQuemSomosTexto();
+    return Align(
+      alignment: Alignment.center,
+      child: Container(
+        constraints: const BoxConstraints(maxWidth: 800),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _sectionBadge('Nossa História'),
+            _sectionTitle('Quem Somos'),
+            texto,
+          ],
+        ),
+      ),
+    );
   }
 
   Widget _buildQuemSomosTexto() {
@@ -289,6 +274,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         RichText(
+          textAlign: TextAlign.justify,
           textScaler: MediaQuery.of(context).textScaler,
           text: TextSpan(children: [
             TextSpan(text: 'A Caparroz Despachantes', style: _t(15, FontWeight.bold, _textDark)),
@@ -297,12 +283,15 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         ),
         const SizedBox(height: 12),
         Text('A trajetória começou com Pedro Caparroz, despachante desde 1945, que iniciou sua carreira em Penápolis e depois se estabeleceu na capital. Em 1953, fundou o escritório no centro da cidade, na Rua do Carmo, e passou a atender como Despachante Caparroz.',
+            textAlign: TextAlign.justify,
             style: _t(15, FontWeight.normal, _textMed)),
         const SizedBox(height: 12),
         Text('O crescimento constante levou à abertura da filial na Rua Siqueira Bueno, na Mooca, em 1963. Com o sucesso da nova unidade, a matriz foi transferida para o bairro, onde estamos até hoje.',
+            textAlign: TextAlign.justify,
             style: _t(15, FontWeight.normal, _textMed)),
         const SizedBox(height: 12),
         Text('Atualmente, a empresa é conduzida por David Caparroz, filho de Pedro, que dá continuidade à visão de confiança, qualidade e tradição no atendimento.',
+            textAlign: TextAlign.justify,
             style: _t(15, FontWeight.normal, _textMed)),
         const SizedBox(height: 24),
         _buildTimeline(),

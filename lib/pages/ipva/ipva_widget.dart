@@ -48,6 +48,12 @@ class _IpvaWidgetState extends State<IpvaWidget> with TickerProviderStateMixin {
   Widget _buildPainelDireito() {
     return Column(
       children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Image.asset('assets/images/Captura_de_Tela_2025-10-08_as_16.13.07.png',
+              width: double.infinity, fit: BoxFit.contain),
+        ),
+        const SizedBox(height: 16),
         PageTable(
           titulo: 'IPVA 2025 – SP\n(cota única ou 1ª parcela)',
           headers: const ['Final Placa', 'Vencimento (Jan/2025)'],
@@ -57,12 +63,6 @@ class _IpvaWidgetState extends State<IpvaWidget> with TickerProviderStateMixin {
             ['Final 7', '17/01'], ['Final 8', '20/01'], ['Final 9', '21/01'],
             ['Final 0', '22/01'],
           ],
-        ),
-        const SizedBox(height: 16),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Image.asset('assets/images/Captura_de_Tela_2025-10-08_as_16.13.07.png',
-              width: double.infinity, fit: BoxFit.contain),
         ),
         const SizedBox(height: 16),
         ClipRRect(
