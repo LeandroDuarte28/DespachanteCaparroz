@@ -93,6 +93,7 @@ Para viabilizar a compilação do projeto web localmente utilizando o Flutter SD
      * `lib/pages/consulte_debitos/consulte_debitos_model.dart`
 2. **Atualização da Página `Nossa História`**:
    * Removido o conteúdo de regularização e consulta de débitos do arquivo `home_widget.dart`, mantendo a página focada exclusivamente na história e estrutura da empresa ("Quem Somos", "Como atuamos", localização e avaliações).
+   * O banner verde de atendimento via WhatsApp (*"Regularize agora mesmo / Fale com nosso time pelo WhatsApp"*) foi movido do final da página para logo abaixo do título principal **"Quem Somos"**.
 3. **Menu de Navegação e Rotas**:
    * O menu de navegação (`TopBarWidget`), tanto na versão Desktop quanto Mobile, foi atualizado para exibir o link **"Consulte seus débitos"** antes de **"Nossa História"**.
    * O roteador principal do site (`nav.dart`) foi configurado para que a rota raiz `/` e o fallback apontem diretamente para `ConsulteDebitosWidget`, garantindo que ao acessar o site o cliente veja a tela principal de consulta.

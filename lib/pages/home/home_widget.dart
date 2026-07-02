@@ -97,6 +97,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           children: [
             _sectionBadge('Nossa História'),
             _sectionTitle('Quem Somos'),
+            _buildCTA(context),
+            const SizedBox(height: 24),
             texto,
           ],
         ),
@@ -410,7 +412,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
   // ─── CTA Banner ───────────────────────────────────────────────────────
   Widget _buildCTA(BuildContext context) => Container(
     width: double.infinity,
-    margin: const EdgeInsets.symmetric(horizontal: 24),
     padding: const EdgeInsets.all(28),
     decoration: BoxDecoration(
       gradient: const LinearGradient(
@@ -528,11 +529,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
               // Avaliações
               _buildAvaliacoes(context),
-
-              const SizedBox(height: 32),
-
-              // CTA WhatsApp
-              _buildCTA(context),
 
               const SizedBox(height: 32),
 
