@@ -86,13 +86,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomeWidget() : HomeWidget(),
+          appStateNotifier.loggedIn ? ConsulteDebitosWidget() : ConsulteDebitosWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomeWidget() : HomeWidget(),
+              appStateNotifier.loggedIn ? ConsulteDebitosWidget() : ConsulteDebitosWidget(),
         ),
         FFRoute(
           name: BackendWidget.routeName,
@@ -142,6 +142,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: XList05ProductsWidget.routeName,
           path: XList05ProductsWidget.routePath,
           builder: (context, params) => XList05ProductsWidget(),
+        ),
+        FFRoute(
+          name: ConsulteDebitosWidget.routeName,
+          path: ConsulteDebitosWidget.routePath,
+          builder: (context, params) => ConsulteDebitosWidget(),
         ),
         FFRoute(
           name: HomeWidget.routeName,
@@ -342,7 +347,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/home';
+            return '/nossa_historia';
           }
           return null;
         },

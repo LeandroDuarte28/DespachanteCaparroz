@@ -1,4 +1,4 @@
-# Despachante Caparroz
+# Caparroz Despachantes
 
 Este é o repositório oficial do portal **Caparroz Despachantes**, construído em Flutter (Dart) com suporte total à Web e hospedado na Vercel.
 
@@ -53,6 +53,11 @@ Para publicar as alterações em produção:
 ---
 
 ## 📝 Resumo de Ajustes Recentes
-- **Nossa História**: O formulário verde de "Consulta de Débitos" foi removido da seção. O texto da apresentação do despachante foi centralizado em largura máxima e justificado.
-- **Páginas de Licenciamento & Vencimentos**: Correção no carregamento local de fotos (`pessoa.jpeg` e `pessoa2.jpeg`) limpando caches.
-- **IPVA**: Ajustada a ordem do painel direito, posicionando a tabela de vencimentos do IPVA 2025 de forma centralizada entre as duas fotos da seção.
+- **Redirecionamento do Logotipo**: O logotipo no cabeçalho e rodapé agora direciona para `https://www.caparroz.com.br/`.
+- **Barra de WhatsApp**: A barra verde (CTA) foi movida para o topo das páginas internas, logo abaixo do título.
+- **Nossa História**: Adição de um card informativo sobre pagamentos de débitos e WhatsApp na página inicial, e alteração da rota da página para `/nossa_historia`.
+- **Textos de IPVA, Licenciamento e Multas**: Ajustes textuais nos termos legais e informativos sobre multas, prazos, descontos e remoção de veículos em blitz/fiscalizações.
+- **Vencimentos e Parcelamentos**: Garantido o uso do ano 2026 para licenciamentos e de parcelamento em até 21x nas páginas correspondentes.
+- **Nossa História (Anterior)**: O formulário verde de "Consulta de Débitos" foi removido da seção. O texto da apresentação do despachante foi centralizado em largura máxima e justificado.
+- **Páginas de Licenciamento & Vencimentos (Anterior)**: Correção no carregamento local de fotos (`pessoa.jpeg` e `pessoa2.jpeg`) limpando caches.
+- **IPVA (Anterior)**: Ajustada a ordem do painel direito, posicionando a tabela de vencimentos do IPVA 2026 de forma centralizada entre as duas fotos da seção.

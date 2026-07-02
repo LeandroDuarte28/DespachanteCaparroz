@@ -113,7 +113,7 @@ class _LicenciamentoWidgetState extends State<LicenciamentoWidget> with TickerPr
         PageSection(
           titulo: '⚠️ O que acontece se eu não pagar?',
           icone: Icons.warning_amber_outlined,
-          conteudo: 'Se o licenciamento não for pago:\n\n• O veículo fica irregular para circulação\n• Você pode ser multado com infração gravíssima (R\$ 293,47 e 7 pontos na CNH)\n• O veículo pode ser apreendido pela fiscalização\n• Não é possível fazer transferência de propriedade\n• Pode haver dificuldade para contratar seguro ou vender o carro',
+          conteudo: 'Se o licenciamento não for pago:\n\n• O veículo fica irregular para circulação\n• Você pode ser multado com infração gravíssima (R\$ 293,47 e 7 pontos na CNH)\n• O veículo pode ser removido ao pátio pela fiscalização até a regularização da documentação\n• Não é possível fazer transferência de propriedade\n• Pode haver dificuldade para contratar seguro ou vender o carro',
         ),
         PageSection(
           titulo: '🔍 Como consultar o valor que devo pagar?',

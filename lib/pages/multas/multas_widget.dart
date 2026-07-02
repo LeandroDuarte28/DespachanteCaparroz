@@ -106,7 +106,7 @@ class _MultasWidgetState extends State<MultasWidget> with TickerProviderStateMix
         PageSection(
           titulo: '⚠️ O que acontece se eu não pagar?',
           icone: Icons.warning_amber_outlined,
-          conteudo: 'Se você não pagar as multas:\n\n• Seu veículo não poderá ser licenciado\n• A dívida se acumula com juros e multas adicionais\n• Os pontos serão lançados na sua CNH\n• A dívida pode ir para protesto ou Dívida Ativa',
+          conteudo: 'Se você não pagar as multas:\n\n• Seu veículo não poderá ser licenciado\n• A dívida se acumula com juros e correção monetária\n• A dívida pode ir para protesto ou Divida Ativa',
         ),
         PageSection(
           titulo: '💰 Como consultar o valor que devo pagar?',
@@ -116,18 +116,18 @@ class _MultasWidgetState extends State<MultasWidget> with TickerProviderStateMix
         PageSection(
           titulo: '📅 Quando devo pagar?',
           icone: Icons.calendar_month_outlined,
-          conteudo: 'Você deve pagar a multa até a data de vencimento informada na notificação. O pagamento em até 30 dias após a emissão da multa pode garantir 20% de desconto se for feito dentro do prazo e sem contestação.',
+          conteudo: 'Você deve pagar a multa até a data de vencimento informada na notificação. O pagamento dentro do prazo pode garantir descontos previstos em lei.',
         ),
         PageSection(
           titulo: '⏳ Qual o prazo para pagar?',
           icone: Icons.hourglass_bottom_outlined,
-          conteudo: 'O prazo varia de acordo com:\n\n• A data de emissão da infração\n• O órgão autuador (Detran, PRF, CET etc.)\n• Se houve ou não recurso da infração\n\nNormalmente, você tem até 60 dias para quitar a multa — quanto antes pagar, melhor, especialmente para manter o licenciamento em dia e evitar juros.',
+          conteudo: 'O prazo varia de acordo com:\n\n• A data de emissão da infração\n• O órgão autuador (Detran, PRF, CET etc.)\n• Se houve ou não recurso da infração\n\nO prazo para pagamento consta na notificação da autuação ou da penalidade e pode variar conforme o órgão',
         ),
         PageSection(
           titulo: '💳 Pague suas multas com facilidade',
           icone: Icons.credit_card_outlined,
           isCallout: true,
-          conteudo: '✅ Online e segura, por meio da plataforma da PinPag\n✅ Parcelada no cartão em até 18x\n✅ Com atendimento por telefone, caso você tenha dúvidas\n✅ Sem sair de casa\n\n👉 Fale conosco pelo WhatsApp: (11) 4301-9829',
+          conteudo: '✅ Online e segura, por meio da plataforma da PinPag\n✅ Parcelada no cartão em até 21x\n✅ Com atendimento por telefone, caso você tenha dúvidas\n✅ Sem sair de casa\n\n👉 Fale conosco pelo WhatsApp: (11) 4301-9829',
         ),
       ],
     );

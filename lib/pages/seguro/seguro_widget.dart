@@ -45,8 +45,14 @@ class _SeguroWidgetState extends State<SeguroWidget> with TickerProviderStateMix
   void dispose() { _model.dispose(); super.dispose(); }
 
   Widget _buildPainelDireito() {
-    final seguradoras = ['Porto Seguro', 'Bradesco Seguros', 'SulAmérica',
-        'Allianz', 'Tokio Marine', 'Mapfre', 'HDI Seguros'];
+    final seguradoras = [
+      'Porto Seguro',
+      'Azul Seguro',
+      'Mitsui Sumitomo Seguros',
+      'Allianz',
+      'Mapfre',
+      'Itaú Seguro'
+    ];
     return Column(
       children: [
         ClipRRect(

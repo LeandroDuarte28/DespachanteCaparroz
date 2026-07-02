@@ -227,22 +227,88 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                           ],
                                         ),
                                       ),
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.asset(
-                                        'assets/images/logo.png',
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                0.05,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.1,
-                                        fit: BoxFit.fill,
+                                    InkWell(
+                                      onTap: () async {
+                                        await launchURL('https://www.caparroz.com.br/');
+                                      },
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8.0),
+                                        child: Image.asset(
+                                          'assets/images/logo.png',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.05,
+                                          height:
+                                              MediaQuery.sizeOf(context).height *
+                                                  0.1,
+                                          fit: BoxFit.fill,
+                                        ),
                                       ),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           15.0, 0.0, 0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          context.goNamed(
+                                            ConsulteDebitosWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
+                                        },
+                                        text: 'Consulte seus débitos',
+                                        options: FFButtonOptions(
+                                          height: 40.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 16.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: Color(0x008377F3),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily,
+                                                color: FFAppState().corFonte,
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.bold,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleSmallIsCustom,
+                                              ),
+                                          elevation: 0.0,
+                                          borderSide: BorderSide(
+                                            color: Color(0x00101213),
+                                            width: 0.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          hoverColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondary,
+                                          hoverTextColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.goNamed(
@@ -656,11 +722,6 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                           ),
                                         ),
                                       ),
-                                    FaIcon(
-                                      FontAwesomeIcons.bars,
-                                      color: FFAppState().corFonte,
-                                      size: 24.0,
-                                    ),
                                   ],
                                 ),
                               ),
@@ -694,13 +755,18 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 0.0, 0.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.asset(
-                                    'assets/images/logo.png',
-                                    width: 60,
-                                    height: 80,
-                                    fit: BoxFit.cover,
+                                child: InkWell(
+                                  onTap: () async {
+                                    await launchURL('https://www.caparroz.com.br/');
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Image.asset(
+                                      'assets/images/logo.png',
+                                      width: 60,
+                                      height: 80,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -743,7 +809,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
-                                                      HomeWidget.routeName,
+                                                      ConsulteDebitosWidget.routeName,
                                                       extra: <String, dynamic>{
                                                         '__transition_info__':
                                                             TransitionInfo(
@@ -757,7 +823,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                       },
                                                     );
                                                   },
-                                                  text: 'Home',
+                                                  text: 'Consulte seus débitos',
                                                   options: FFButtonOptions(
                                                     height: 20.0,
                                                     padding:
@@ -829,6 +895,78 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                       },
                                                     );
                                                   },
+                                                  text: 'Nossa História',
+                                                  options: FFButtonOptions(
+                                                    height: 20.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: Color(0x008377F3),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .accent1,
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
+                                                        ),
+                                                    elevation: 0.0,
+                                                    borderSide: BorderSide(
+                                                      color: Color(0x00101213),
+                                                      width: 0.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                    hoverColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                    hoverTextColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 0.0, 0.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    context.goNamed(
+                                                      IpvaWidget.routeName,
+                                                      extra: <String, dynamic>{
+                                                        '__transition_info__':
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                          duration: Duration(
+                                                              milliseconds: 0),
+                                                        ),
+                                                      },
+                                                    );
+                                                  },
                                                   text: 'IPVA',
                                                   options: FFButtonOptions(
                                                     height: 20.0,
@@ -886,7 +1024,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
-                                                      HomeWidget.routeName,
+                                                      LicenciamentoWidget.routeName,
                                                       extra: <String, dynamic>{
                                                         '__transition_info__':
                                                             TransitionInfo(
@@ -957,7 +1095,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
-                                                      HomeWidget.routeName,
+                                                      MultasWidget.routeName,
                                                       extra: <String, dynamic>{
                                                         '__transition_info__':
                                                             TransitionInfo(

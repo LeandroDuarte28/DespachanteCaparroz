@@ -100,7 +100,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Despachante Caparroz',
+      title: 'Caparroz Despachantes',
       scrollBehavior: MyAppScrollBehavior(),
       localizationsDelegates: [
         FFLocalizationsDelegate(),

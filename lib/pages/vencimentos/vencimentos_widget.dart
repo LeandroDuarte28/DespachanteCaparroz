@@ -109,7 +109,7 @@ class _VencimentosWidgetState extends State<VencimentosWidget> with TickerProvid
         PageSection(
           titulo: '',
           customWidget: PageTable(
-            titulo: '🚗 Carro — Calendário de Licenciamento 2025',
+            titulo: '🚗 Carro — Calendário de Licenciamento 2026',
             headers: const ['Mês', 'Final da Placa'],
             rows: const [
               ['Jan até Jun', 'Consultar Detran'],
@@ -125,7 +125,7 @@ class _VencimentosWidgetState extends State<VencimentosWidget> with TickerProvid
         PageSection(
           titulo: '',
           customWidget: PageTable(
-            titulo: '🏍️ Moto — Calendário de Licenciamento 2025',
+            titulo: '🏍️ Moto — Calendário de Licenciamento 2026',
             headers: const ['Final da Placa', 'Mês do IPVA'],
             rows: const [
               ['Final 1 e 2', 'Consultar Detran'],
@@ -140,7 +140,7 @@ class _VencimentosWidgetState extends State<VencimentosWidget> with TickerProvid
         PageSection(
           titulo: '',
           customWidget: PageTable(
-            titulo: '🚛 Caminhão — Calendário de Licenciamento 2025',
+            titulo: '🚛 Caminhão — Calendário de Licenciamento 2026',
             headers: const ['Mês', 'Final da Placa'],
             rows: const [
               ['Jan até Set', 'Consultar Detran'],
@@ -159,7 +159,7 @@ class _VencimentosWidgetState extends State<VencimentosWidget> with TickerProvid
           titulo: '💳 Regularize agora com o Caparroz',
           icone: Icons.credit_card_outlined,
           isCallout: true,
-          conteudo: '✅ Consulta gratuita de todos os débitos\n✅ Pagamento online e seguro\n✅ Parcelamento no cartão em até 18x\n✅ Sem sair de casa\n\n👉 Fale conosco pelo WhatsApp: (11) 4301-9829',
+          conteudo: '✅ Consulta gratuita de todos os débitos\n✅ Pagamento online e seguro\n✅ Parcelamento no cartão em até 21x\n✅ Sem sair de casa\n\n👉 Fale conosco pelo WhatsApp: (11) 4301-9829',
         ),
       ],
     );

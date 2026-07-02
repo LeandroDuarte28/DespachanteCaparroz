@@ -49,7 +49,7 @@ class InnerPageLayout extends StatelessWidget {
                 child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   const Icon(Icons.lock_outline, color: Colors.white70, size: 14),
                   const SizedBox(width: 8),
-                  Flexible(child: Text('Despachante Caparroz SEGURO',
+                  Flexible(child: Text('Caparroz Despachantes',
                       style: GoogleFonts.roboto(
                           color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13))),
                 ]),
@@ -89,6 +89,8 @@ class InnerPageLayout extends StatelessWidget {
                           fontSize: 15, color: const Color(0xFF666666), height: 1.5)),
                 ]),
               ),
+              // CTA WhatsApp
+              _buildCTA(context),
               // Conteúdo
               LayoutBuilder(builder: (context, c) {
                 final isDesktop = c.maxWidth > 860;
@@ -113,8 +115,6 @@ class InnerPageLayout extends StatelessWidget {
                         ]),
                 );
               }),
-              // CTA WhatsApp
-              _buildCTA(context),
               const SizedBox(height: 8),
               // Rodapé
               wrapWithModel(model: rodapeModel, updateCallback: onUpdate,

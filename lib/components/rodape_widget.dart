@@ -79,10 +79,15 @@ class _RodapeWidgetState extends State<RodapeWidget> {
   }
 
   Widget _buildLogo() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
-      child: Image.asset('assets/images/logo.png',
-          width: 56, height: 56, fit: BoxFit.contain),
+    return InkWell(
+      onTap: () async {
+        await launchURL('https://www.caparroz.com.br/');
+      },
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.asset('assets/images/logo.png',
+            width: 56, height: 56, fit: BoxFit.contain),
+      ),
     );
   }
 
@@ -91,7 +96,7 @@ class _RodapeWidgetState extends State<RodapeWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text('Despachante Caparroz',
+        Text('Caparroz Despachantes',
             style: GoogleFonts.mukta(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -125,13 +130,13 @@ class _RodapeWidgetState extends State<RodapeWidget> {
     );
   }
 
-  Widget _socialIcon(IconData icon, String? url) {
+  Widget _socialIcon(dynamic icon, String? url) {
     return InkWell(
       onTap: url != null ? () => launchURL(url) : null,
       borderRadius: BorderRadius.circular(20),
       child: Padding(
         padding: const EdgeInsets.all(4),
-        child: FaIcon(icon, color: Colors.white, size: 20),
+        child: FaIcon(icon as FaIconData?, color: Colors.white, size: 20),
       ),
     );
   }

@@ -12,20 +12,21 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'home_model.dart';
-export 'home_model.dart';
+import 'consulte_debitos_model.dart';
+export 'consulte_debitos_model.dart';
 
-class HomeWidget extends StatefulWidget {
-  const HomeWidget({super.key});
-  static String routeName = 'Home';
-  static String routePath = '/nossa_historia';
+class ConsulteDebitosWidget extends StatefulWidget {
+  const ConsulteDebitosWidget({super.key});
+  static String routeName = 'ConsulteDebitos';
+  static String routePath = '/consulte_debitos';
 
   @override
-  State<HomeWidget> createState() => _HomeWidgetState();
+  State<ConsulteDebitosWidget> createState() => _ConsulteDebitosWidgetState();
 }
 
-class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
-  late HomeModel _model;
+class _ConsulteDebitosWidgetState extends State<ConsulteDebitosWidget>
+    with TickerProviderStateMixin {
+  late ConsulteDebitosModel _model;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = <String, AnimationInfo>{};
 
@@ -39,7 +40,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomeModel());
+    _model = createModel(context, () => ConsulteDebitosModel());
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       FFAppState().textoHomeCaracterEspecial = '1ª via e 2ª via de documentos –';
       safeSetState(() {});
@@ -55,7 +56,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
   }
 
   @override
-  void dispose() { _model.dispose(); super.dispose(); }
+  void dispose() {
+    _model.dispose();
+    super.dispose();
+  }
 
   // ─── Helpers ──────────────────────────────────────────────────────────
   TextStyle _t(double size, FontWeight w, Color c, {double h = 1.5}) =>
@@ -85,233 +89,170 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             fontSize: 28, fontWeight: FontWeight.bold, color: _textDark)),
   );
 
-  // ─── Quem Somos ───────────────────────────────────────────────────────
-  Widget _buildQuemSomos(BuildContext context) {
-    final texto = _buildQuemSomosTexto();
-    return Align(
-      alignment: Alignment.center,
-      child: Container(
-        constraints: const BoxConstraints(maxWidth: 800),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _sectionBadge('Nossa História'),
-            _sectionTitle('Quem Somos'),
-            texto,
-          ],
+  // ─── Hero Banner ──────────────────────────────────────────────────────
+  Widget _buildHero(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFF003D20), Color(0xFF006633)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
       ),
-    );
-  }
-
-  Widget _buildQuemSomosTexto() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        RichText(
-          textAlign: TextAlign.justify,
-          textScaler: MediaQuery.of(context).textScaler,
-          text: TextSpan(children: [
-            TextSpan(text: 'A Caparroz Despachantes', style: _t(15, FontWeight.bold, _textDark)),
-            TextSpan(text: ' atua no setor desde 1951, sendo referência em serviços de documentação veicular em São Paulo.', style: _t(15, FontWeight.normal, _textMed)),
-          ]),
-        ),
-        const SizedBox(height: 12),
-        Text('A trajetória começou com Pedro Caparroz, despachante desde 1945, que iniciou sua carreira em Penápolis e depois se estabeleceu na capital. Em 1953, fundou o escritório no centro da cidade, na Rua do Carmo, e passou a atender como Caparroz Despachantes.',
-            textAlign: TextAlign.justify,
-            style: _t(15, FontWeight.normal, _textMed)),
-        const SizedBox(height: 12),
-        Text('O crescimento constante levou à abertura da filial na Rua Siqueira Bueno, na Mooca, em 1963. Com o sucesso da nova unidade, a matriz foi transferida para o bairro, onde estamos até hoje.',
-            textAlign: TextAlign.justify,
-            style: _t(15, FontWeight.normal, _textMed)),
-        const SizedBox(height: 12),
-        Text('Atualmente, a empresa é conduzida por David Caparroz, filho de Pedro, que dá continuidade à visão de confiança, qualidade e tradição no atendimento.',
-            textAlign: TextAlign.justify,
-            style: _t(15, FontWeight.normal, _textMed)),
-        const SizedBox(height: 24),
-        _buildTimeline(),
-      ],
-    );
-  }
-
-  Widget _buildTimeline() {
-    final items = [
-      {'ano': '1945', 'label': 'Início em Penápolis'},
-      {'ano': '1953', 'label': 'Escritório na Rua do Carmo'},
-      {'ano': '1963', 'label': 'Filial na Mooca'},
-      {'ano': '2025', 'label': 'Serviços digitais'},
-    ];
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: List.generate(items.length, (i) => Row(
+      padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 24),
+      child: LayoutBuilder(builder: (context, c) {
+        final isMobile = c.maxWidth < 700;
+        final content = Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: const Color(0xFFDDDDDD)),
+                color: Colors.white12,
+                borderRadius: BorderRadius.circular(20),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 32, height: 32,
-                    decoration: BoxDecoration(
-                      color: _green.withOpacity(0.1),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(Icons.check, color: _green, size: 16),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(items[i]['ano']!,
-                      style: _t(14, FontWeight.bold, _green)),
-                  const SizedBox(height: 2),
-                  SizedBox(
-                    width: 90,
-                    child: Text(items[i]['label']!,
-                        textAlign: TextAlign.center,
-                        style: _t(11, FontWeight.normal, _textLight, h: 1.3)),
-                  ),
-                ],
+              child: Text('Desde 1951 em São Paulo',
+                  style: GoogleFonts.roboto(
+                      fontSize: 12, color: Colors.white70)),
+            ),
+            const SizedBox(height: 16),
+            Text('Regularize seus\ndocumentos veiculares',
+                style: GoogleFonts.mukta(
+                    fontSize: isMobile ? 30 : 38,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    height: 1.2)),
+            const SizedBox(height: 12),
+            Text('IPVA, Licenciamento, Multas e muito mais.\nRápido, seguro e sem sair de casa.',
+                style: GoogleFonts.roboto(
+                    fontSize: 15, color: Colors.white70, height: 1.5)),
+            const SizedBox(height: 24),
+            Wrap(
+              spacing: 12,
+              runSpacing: 8,
+              children: [
+                _heroChip(Icons.verified_outlined, 'Pagamento seguro'),
+                _heroChip(Icons.schedule, 'Resultado em 5 min'),
+                _heroChip(Icons.star_outline_rounded, 'Desde 1951'),
+              ],
+            ),
+          ],
+        );
+        if (isMobile) return content;
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(flex: 3, child: content),
+            const SizedBox(width: 40),
+            Expanded(
+              flex: 2,
+              child: wrapWithModel(
+                model: _model.consultaDebitosSemLoginModel1,
+                updateCallback: () => safeSetState(() {}),
+                child: const ConsultaDebitosSemLoginWidget(),
               ),
             ),
-            if (i < items.length - 1)
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Icon(Icons.arrow_forward_ios_rounded,
-                    size: 14, color: Colors.grey.shade400),
-              ),
-          ],
-        )),
-      ),
-    );
-  }
-
-  // ─── Estrutura e Atuação ─────────────────────────────────────────────
-  Widget _buildEstrutura(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      color: _bg,
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 24),
-      child: LayoutBuilder(builder: (context, c) {
-        final isMobile = c.maxWidth < 700;
-        final img = ClipRRect(
-          borderRadius: BorderRadius.circular(16),
-          child: Image.asset('assets/images/fachada.png',
-              width: double.infinity,
-              height: isMobile ? 220 : 320,
-              fit: BoxFit.cover),
-        );
-        final texto = Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _sectionBadge('Estrutura'),
-            _sectionTitle('Como atuamos'),
-            Text('Com sede no Alto da Mooca, em um espaço de mais de 200 m², atendemos pessoas físicas e jurídicas, com destaque para o atendimento especializado a taxistas e empresas de frotas.',
-                style: _t(15, FontWeight.normal, _textMed)),
-            const SizedBox(height: 20),
-            Text('Nossos principais serviços:',
-                style: _t(14, FontWeight.bold, _textDark)),
-            const SizedBox(height: 12),
-            ...[
-              ['IPVA', 'Consulta e pagamento à vista ou parcelado em até 21x'],
-              ['Licenciamento', 'Emissão rápida do CRLV-e'],
-              ['Multas de trânsito', 'Consulta, orientação e quitação'],
-              ['Transferência de veículo', 'Compra e venda sem burocracia'],
-              ['1ª e 2ª via de documentos', 'CRV, CRLV, placas e mais'],
-              ['Regularização de débitos', 'Detran, Sefaz, Sinesp'],
-            ].map((s) => Padding(
-                  padding: const EdgeInsets.only(bottom: 10),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 6, height: 6,
-                        margin: const EdgeInsets.only(top: 7),
-                        decoration: const BoxDecoration(color: _green, shape: BoxShape.circle),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: RichText(
-                          textScaler: MediaQuery.of(context).textScaler,
-                          text: TextSpan(children: [
-                            TextSpan(text: '${s[0]} – ', style: _t(14, FontWeight.w600, _textDark)),
-                            TextSpan(text: s[1], style: _t(14, FontWeight.normal, _textMed)),
-                          ]),
-                        ),
-                      ),
-                    ],
-                  ),
-                )),
-          ],
-        );
-        if (isMobile) {
-          return Column(children: [img, const SizedBox(height: 24), texto]);
-        }
-        return Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(flex: 2, child: img),
-            const SizedBox(width: 36),
-            Expanded(flex: 3, child: texto),
           ],
         );
       }),
     );
   }
 
-  // ─── Onde Estamos ────────────────────────────────────────────────────
-  Widget _buildOndeEstamos(BuildContext context) {
-    return LayoutBuilder(builder: (context, c) {
-      final isMobile = c.maxWidth < 700;
-      final mapa = ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Image.asset(
-          'assets/images/Captura_de_Tela_2025-10-09_as_17.31.46.png',
-          width: double.infinity,
-          fit: BoxFit.contain,
-        ),
-      );
-      final info = Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _sectionBadge('Localização'),
-          _sectionTitle('Onde estamos'),
-          Text('Nosso escritório está localizado no Alto da Mooca, com fácil acesso para toda São Paulo.',
-              style: _t(15, FontWeight.normal, _textMed)),
-          const SizedBox(height: 16),
-          _infoRow(Icons.location_on_outlined, 'Rua Siqueira Bueno, nº 2238 – Mooca, São Paulo – SP'),
-          const SizedBox(height: 8),
-          _infoRow(Icons.phone_outlined, '(11) 4301-9829'),
-          const SizedBox(height: 8),
-          _infoRow(Icons.access_time_outlined, 'Segunda a Sexta: 9h às 18h'),
-        ],
-      );
-      if (isMobile) {
-        return Column(children: [info, const SizedBox(height: 24), mapa]);
-      }
-      return Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(flex: 2, child: info),
-          const SizedBox(width: 36),
-          Expanded(flex: 2, child: mapa),
-        ],
-      );
-    });
+  Widget _heroChip(IconData icon, String label) => Container(
+    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+    decoration: BoxDecoration(
+      color: Colors.white12,
+      borderRadius: BorderRadius.circular(20),
+      border: Border.all(color: Colors.white24),
+    ),
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, color: Colors.white70, size: 14),
+        const SizedBox(width: 6),
+        Text(label,
+            style: GoogleFonts.roboto(
+                fontSize: 12, color: Colors.white, fontWeight: FontWeight.w500)),
+      ],
+    ),
+  );
+
+  // ─── Serviços rápidos ─────────────────────────────────────────────────
+  Widget _buildServicos(BuildContext context) {
+    final items = [
+      {'icon': Icons.receipt_long_outlined, 'title': 'IPVA', 'desc': 'Consulta e pagamento parcelado em até 21x', 'route': 'Ipva'},
+      {'icon': Icons.article_outlined, 'title': 'Licenciamento', 'desc': 'Emissão rápida do CRLV-e sem sair de casa', 'route': 'Licenciamento'},
+      {'icon': Icons.warning_amber_outlined, 'title': 'Multas', 'desc': 'Consulte e quite suas infrações online', 'route': 'Multas'},
+      {'icon': Icons.swap_horiz_rounded, 'title': 'Transferência', 'desc': 'Documentação completa de compra e venda', 'route': 'ConsulteDebitos'},
+      {'icon': Icons.description_outlined, 'title': '1ª e 2ª Via', 'desc': 'CRV, CRLV, placas e documentos', 'route': 'ConsulteDebitos'},
+      {'icon': Icons.calendar_month_outlined, 'title': 'Vencimentos', 'desc': 'Calendário completo de prazos', 'route': 'Vencimentos'},
+    ];
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _sectionBadge('Nossos Serviços'),
+        _sectionTitle('O que podemos fazer por você'),
+        LayoutBuilder(builder: (context, c) {
+          final cols = c.maxWidth > 900 ? 3 : c.maxWidth > 550 ? 2 : 1;
+          return Wrap(
+            spacing: 16,
+            runSpacing: 16,
+            children: items.map((item) {
+              final w = (c.maxWidth - (cols - 1) * 16) / cols;
+              return SizedBox(
+                width: w,
+                child: _servicoCard(item),
+              );
+            }).toList(),
+          );
+        }),
+      ],
+    );
   }
 
-  Widget _infoRow(IconData icon, String text) => Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Icon(icon, size: 18, color: _green),
-      const SizedBox(width: 10),
-      Expanded(child: Text(text, style: _t(14, FontWeight.normal, _textMed))),
-    ],
-  );
+  Widget _servicoCard(Map<String, dynamic> item) {
+    return InkWell(
+      onTap: () => context.pushNamed(item['route'] as String),
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: const Color(0xFFEEEEEE)),
+          boxShadow: const [BoxShadow(blurRadius: 8, color: Color(0x08000000), offset: Offset(0, 2))],
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 44, height: 44,
+              decoration: BoxDecoration(
+                color: _green.withOpacity(0.08),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(item['icon'] as IconData, color: _green, size: 22),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(item['title'] as String,
+                      style: _t(14, FontWeight.bold, _textDark)),
+                  const SizedBox(height: 2),
+                  Text(item['desc'] as String,
+                      style: _t(12, FontWeight.normal, _textLight, h: 1.4)),
+                ],
+              ),
+            ),
+            const Icon(Icons.arrow_forward_ios, size: 14, color: Color(0xFFCCCCCC)),
+          ],
+        ),
+      ),
+    );
+  }
 
   // ─── Avaliações ──────────────────────────────────────────────────────
   Widget _buildAvaliacoes(BuildContext context) {
@@ -507,24 +448,71 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 ),
               ),
 
-              // Quem somos
+              // Hero com consulta (desktop) ou só hero (mobile)
+              LayoutBuilder(builder: (ctx, c) {
+                if (c.maxWidth >= 700) return _buildHero(ctx);
+                return Column(children: [
+                  _buildHero(ctx),
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: wrapWithModel(
+                      model: _model.consultaDebitosSemLoginModel1,
+                      updateCallback: () => safeSetState(() {}),
+                      child: const ConsultaDebitosSemLoginWidget(),
+                    ),
+                  ),
+                ]);
+              }),
+
+              // Serviços rápidos
               Padding(
-                padding: const EdgeInsets.fromLTRB(24, 32, 24, 0),
-                child: _buildQuemSomos(context),
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+                child: _buildServicos(context),
               ),
 
               _divider(),
 
-              // Estrutura
-              _buildEstrutura(context),
-
-              const SizedBox(height: 8),
-
-              // Onde estamos
+              // Informativo sobre pagamentos e serviços
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-                child: _buildOndeEstamos(context),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    constraints: const BoxConstraints(maxWidth: 800),
+                    padding: const EdgeInsets.all(24),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF7F8FA),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: const Color(0xFFEEEEEE)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'O pagamento de débitos, como IPVA, Licenciamento e Multas pode ser feito diretamente pelo site.',
+                          style: GoogleFonts.roboto(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: _green,
+                            height: 1.5,
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        Text(
+                          'Para emissão de documentos, seguros e outros serviços, entrar em contato com o Caparroz pelo WhatsApp (11) 4301-9829.',
+                          style: GoogleFonts.roboto(
+                            fontSize: 15,
+                            color: _textDark,
+                            height: 1.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
+
+              const SizedBox(height: 32),
 
               // Avaliações
               _buildAvaliacoes(context),

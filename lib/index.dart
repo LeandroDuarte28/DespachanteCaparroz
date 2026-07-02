@@ -10,3 +10,5 @@ export '/pages/licenciamento/licenciamento_widget.dart'
 export '/pages/multas/multas_widget.dart' show MultasWidget;
 export '/pages/vencimentos/vencimentos_widget.dart' show VencimentosWidget;
 export '/pages/seguro/seguro_widget.dart' show SeguroWidget;
+export '/pages/consulte_debitos/consulte_debitos_widget.dart'
+    show ConsulteDebitosWidget;
