@@ -136,7 +136,7 @@ class _RodapeWidgetState extends State<RodapeWidget> {
       borderRadius: BorderRadius.circular(20),
       child: Padding(
         padding: const EdgeInsets.all(4),
-        child: FaIcon(icon as IconData?, color: Colors.white, size: 20),
+        child: FaIcon(icon as dynamic, color: Colors.white, size: 20),
       ),
     );
   }
