@@ -50,7 +50,7 @@ class _IpvaWidgetState extends State<IpvaWidget> with TickerProviderStateMixin {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(12),
-          child: Image.asset('assets/images/Captura_de_Tela_2025-10-08_as_16.13.07.png',
+          child: Image.asset('assets/images/front.jpeg',
               width: double.infinity, fit: BoxFit.contain),
         ),
         const SizedBox(height: 16),

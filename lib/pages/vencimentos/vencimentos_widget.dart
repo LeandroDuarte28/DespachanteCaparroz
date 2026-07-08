@@ -100,7 +100,7 @@ class _VencimentosWidgetState extends State<VencimentosWidget> with TickerProvid
     context.watch<FFAppState>();
     return InnerPageLayout(
       titulo: 'Calendário de Vencimentos',
-      subtitulo: 'Confira os prazos de IPVA e Licenciamento para carros, motos e caminhões.',
+      subtitulo: 'Confira os prazos de Licenciamento para automóveis, pick-ups, motos, caminhões e tratores.',
       topBarModel: _model.topBarModel,
       rodapeModel: _model.rodapeModel,
       onUpdate: () => safeSetState(() {}),
@@ -109,44 +109,28 @@ class _VencimentosWidgetState extends State<VencimentosWidget> with TickerProvid
         PageSection(
           titulo: '',
           customWidget: PageTable(
-            titulo: '🚗 Carro — Calendário de Licenciamento 2026',
-            headers: const ['Mês', 'Final da Placa'],
+            titulo: '🚗 🏍️ Automóveis, pick-ups e motos — Calendário de Licenciamento 2026',
+            headers: const ['Final da Placa', 'Mês'],
             rows: const [
-              ['Jan até Jun', 'Consultar Detran'],
-              ['Julho', 'Final 1'],
-              ['Agosto', 'Final 2'],
-              ['Setembro', 'Final 3'],
-              ['Outubro', 'Final 4'],
-              ['Novembro', 'Final 5 e 6'],
-              ['Dezembro', 'Final 7, 8, 9 e 0'],
+              ['Final 1 e 2', 'Julho'],
+              ['Final 3 e 4', 'Agosto'],
+              ['Final 5 e 6', 'Setembro'],
+              ['Final 7 e 8', 'Outubro'],
+              ['Final 9', 'Novembro'],
+              ['Final 0', 'Dezembro'],
             ],
           ),
         ),
         PageSection(
           titulo: '',
           customWidget: PageTable(
-            titulo: '🏍️ Moto — Calendário de Licenciamento 2026',
-            headers: const ['Final da Placa', 'Mês do IPVA'],
+            titulo: '🚛 Caminhões e tratores — Calendário de Licenciamento 2026',
+            headers: const ['Final da Placa', 'Mês'],
             rows: const [
-              ['Final 1 e 2', 'Consultar Detran'],
-              ['Final 3 e 4', 'Consultar Detran'],
-              ['Final 5 e 6', 'Consultar Detran'],
-              ['Final 7 e 8', 'Consultar Detran'],
-              ['Final 9', 'Consultar Detran'],
-              ['Final 0', 'Consultar Detran'],
-            ],
-          ),
-        ),
-        PageSection(
-          titulo: '',
-          customWidget: PageTable(
-            titulo: '🚛 Caminhão — Calendário de Licenciamento 2026',
-            headers: const ['Mês', 'Final da Placa'],
-            rows: const [
-              ['Jan até Set', 'Consultar Detran'],
-              ['Outubro', 'Final 1, 2, 3 e 4'],
-              ['Novembro', 'Final 5, 6 e 7'],
-              ['Dezembro', 'Final 8, 9 e 0'],
+              ['Final 1 e 2', 'Setembro'],
+              ['Final 3, 4 e 5', 'Outubro'],
+              ['Final 6, 7 e 8', 'Novembro'],
+              ['Final 9 e 0', 'Dezembro'],
             ],
           ),
         ),

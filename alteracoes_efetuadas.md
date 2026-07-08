@@ -100,7 +100,34 @@ Para viabilizar a compilação do projeto web localmente utilizando o Flutter SD
 
 ### 🖼️ Como Trocar a Foto da Página IPVA
 Para trocar a imagem da tela de IPVA **sem alterar o código**, basta substituir o arquivo físico mantendo exatamente o mesmo nome e formato no diretório do projeto:
-* **Caminho da imagem:** `assets/images/Captura_de_Tela_2025-10-08_as_16.13.07.png`
+* **Caminho da imagem:** `assets/images/front.jpeg`
 * **Passo a passo:**
   1. Acesse a pasta `assets/images/` dentro do projeto (`C:\Projetos\DespachanteCaparroz\assets\images\`).
-  2. Substitua o arquivo `Captura_de_Tela_2025-10-08_as_16.13.07.png` por sua nova imagem, renomeando a nova imagem para ter **exatamente o mesmo nome** (`Captura_de_Tela_2025-10-08_as_16.13.07.png`).
+  2. Substitua o arquivo `front.jpeg` por sua nova imagem, renomeando a nova imagem para ter **exatamente o mesmo nome** (`front.jpeg`).
+
+---
+
+## 🚀 Alterações Efetuadas (07/07/2026)
+
+### 📅 Calendário de Vencimentos
+1. **Unificação de Automóveis, pick-ups e motos**:
+   * O calendário de licenciamento para carros e motos foi unificado na tabela **"🚗 🏍️ Automóveis, pick-ups e motos — Calendário de Licenciamento 2026"**, removendo a tabela separada para motos.
+   * Os prazos e finais de placa foram atualizados (Final 1 e 2 em Julho até Final 0 em Dezembro).
+2. **Atualização de Caminhões e tratores**:
+   * A tabela foi atualizada para **"🚛 Caminhões e tratores — Calendário de Licenciamento 2026"** com os prazos corretos (Final 1 e 2 em Setembro até Final 9 e 0 em Dezembro).
+   * **Arquivo alterado:**
+     * `lib/pages/vencimentos/vencimentos_widget.dart`
+
+### 🏢 Nossa História
+1. **Atualização de Localização e Horário**:
+   * O texto de localização e endereço foi ajustado de "Alto da Mooca" para **"Mooca"**.
+   * O horário de funcionamento na seção "Onde estamos" foi alterado para **Segunda a Sexta: 8h às 18h**.
+   * **Arquivo alterado:**
+     * `lib/pages/home/home_widget.dart`
+
+### 🖼️ IPVA
+1. **Atualização da Foto da Fachada**:
+   * A foto da fachada com texto ("Consulte sua placa e PARCELE...") foi substituída pela foto limpa da fachada (`front.jpeg`).
+   * **Arquivo alterado:**
+     * `lib/pages/ipva/ipva_widget.dart`
+

@@ -212,7 +212,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           children: [
             _sectionBadge('Estrutura'),
             _sectionTitle('Como atuamos'),
-            Text('Com sede no Alto da Mooca, em um espaço de mais de 200 m², atendemos pessoas físicas e jurídicas, com destaque para o atendimento especializado a taxistas e empresas de frotas.',
+            Text('Com sede na Mooca, em um espaço de mais de 200 m², atendemos pessoas físicas e jurídicas, com destaque para o atendimento especializado a taxistas e empresas de frotas.',
                 style: _t(15, FontWeight.normal, _textMed)),
             const SizedBox(height: 20),
             Text('Nossos principais serviços:',
@@ -282,14 +282,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         children: [
           _sectionBadge('Localização'),
           _sectionTitle('Onde estamos'),
-          Text('Nosso escritório está localizado no Alto da Mooca, com fácil acesso para toda São Paulo.',
+          Text('Nosso escritório está localizado na Mooca, com fácil acesso para toda São Paulo.',
               style: _t(15, FontWeight.normal, _textMed)),
           const SizedBox(height: 16),
           _infoRow(Icons.location_on_outlined, 'Rua Siqueira Bueno, nº 2238 – Mooca, São Paulo – SP'),
           const SizedBox(height: 8),
           _infoRow(Icons.phone_outlined, '(11) 4301-9829'),
           const SizedBox(height: 8),
-          _infoRow(Icons.access_time_outlined, 'Segunda a Sexta: 9h às 18h'),
+          _infoRow(Icons.access_time_outlined, 'Segunda a Sexta: 8h às 18h'),
         ],
       );
       if (isMobile) {
