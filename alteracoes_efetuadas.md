@@ -131,3 +131,16 @@ Para trocar a imagem da tela de IPVA **sem alterar o código**, basta substituir
    * **Arquivo alterado:**
      * `lib/pages/ipva/ipva_widget.dart`
 
+---
+
+## 🚀 Alterações Efetuadas (15/07/2026)
+
+### 📱 Navegação Mobile Multi-linhas (Wrap)
+1. **Opções de Navegação Ajustadas para Múltiplas Linhas em Celulares**:
+   * Na visualização exclusiva para dispositivos móveis (`responsiveVisibility` para celulares e tablets em modo retrato), as opções de navegação (`Consulte seus débitos`, `Nossa História`, `IPVA`, `Licenciamento`, `Multas`, `Vencimentos` e `Seguros`) foram reestruturadas para um layout inteligente **multi-linhas** (`Wrap`), substituindo a rolagem horizontal em linha única.
+   * **Quebra Automática e Espaçamento (`spacing` e `runSpacing`)**: Os botões que não cabem na mesma linha são automaticamente ajustados e distribuídos nas próximas linhas (`WrapAlignment.end`), mantendo um espaçamento uniforme (`6.0px` entre bordas horizontais e verticais) para evitar sobreposição ou colisão visual.
+   * **Ajuste Visual dos Botões (`Pílulas Verde Claro`)**: Os botões receberam uma tonalidade de verde bem clarinho (`Color(0xFFE8F5E9)`) no fundo, acompanhada por texto em verde escuro (`Color(0xFF1B5E20)`) e altura otimizada (`height: 26.0`), proporcionando excelente contraste, usabilidade no toque e uma estética moderna.
+   * **Arquivo alterado:**
+     * `lib/components/top_bar_widget.dart`
+
+

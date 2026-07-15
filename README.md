@@ -53,11 +53,12 @@ Para publicar as alterações em produção:
 ---
 
 ## 📝 Resumo de Ajustes Recentes
+- **Navegação Mobile Multi-linhas (15/07/2026)**: Em telas de celulares (`TopBarWidget`), a navegação foi ajustada com `Wrap` multi-linhas automático. Os botões que não cabem na linha são distribuídos nas próximas linhas com espaçamento uniforme (`6.0px`), estilizados com uma tonalidade de verde bem clarinho (`Color(0xFFE8F5E9)`) e texto verde escuro (`Color(0xFF1B5E20)`).
+- **Página "Consulte seus débitos" (02/07/2026)**: Criação de nova página raiz (`/consulte_debitos`) contendo o formulário de consulta, serviços rápidos ("O que podemos fazer por você") e quadro informativo, que foram migrados da página "Nossa História". O menu principal e a rota inicial foram atualizados para dar prioridade a esta tela.
+- **Calendário de Vencimentos 2026 (07/07/2026)**: Unificação das tabelas de licenciamento de Automóveis, pick-ups e motos em uma única tabela (2026), além da atualização dos prazos da tabela de Caminhões e tratores (2026).
+- **Nossa História e Contato (07/07/2026)**: Atualização do endereço para "Mooca" e ajuste do horário de atendimento para Segunda a Sexta das 8h às 18h.
+- **Foto da Fachada IPVA (07/07/2026)**: Substituição da imagem com texto da fachada em `IPVA` pela imagem limpa (`front.jpeg`).
 - **Redirecionamento do Logotipo**: O logotipo no cabeçalho e rodapé agora direciona para `https://www.caparroz.com.br/`.
 - **Barra de WhatsApp**: A barra verde (CTA) foi movida para o topo das páginas internas, logo abaixo do título.
-- **Nossa História**: Adição de um card informativo sobre pagamentos de débitos e WhatsApp na página inicial, e alteração da rota da página para `/nossa_historia`.
 - **Textos de IPVA, Licenciamento e Multas**: Ajustes textuais nos termos legais e informativos sobre multas, prazos, descontos e remoção de veículos em blitz/fiscalizações.
 - **Vencimentos e Parcelamentos**: Garantido o uso do ano 2026 para licenciamentos e de parcelamento em até 21x nas páginas correspondentes.
-- **Nossa História (Anterior)**: O formulário verde de "Consulta de Débitos" foi removido da seção. O texto da apresentação do despachante foi centralizado em largura máxima e justificado.
-- **Páginas de Licenciamento & Vencimentos (Anterior)**: Correção no carregamento local de fotos (`pessoa.jpeg` e `pessoa2.jpeg`) limpando caches.
-- **IPVA (Anterior)**: Ajustada a ordem do painel direito, posicionando a tabela de vencimentos do IPVA 2026 de forma centralizada entre as duas fotos da seção.

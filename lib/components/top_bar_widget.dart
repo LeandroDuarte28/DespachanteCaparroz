@@ -797,15 +797,17 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
                                         children: [
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
+                                          Flexible(
+                                            child: Wrap(
+                                              spacing: 6.0,
+                                              runSpacing: 6.0,
+                                              alignment: WrapAlignment.end,
+                                              crossAxisAlignment: WrapCrossAlignment.center,
+                                              children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        5.0, 0.0, 0.0, 0.0),
+                                                        0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
@@ -825,16 +827,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                   },
                                                   text: 'Consulte seus débitos',
                                                   options: FFButtonOptions(
-                                                    height: 20.0,
+                                                    height: 26.0,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 0.0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0x008377F3),
+                                                    color: Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -843,9 +845,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
+                                                          color: Color(0xFF1B5E20),
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -877,7 +877,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        5.0, 0.0, 0.0, 0.0),
+                                                        0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
@@ -897,16 +897,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                   },
                                                   text: 'Nossa História',
                                                   options: FFButtonOptions(
-                                                    height: 20.0,
+                                                    height: 26.0,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 0.0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0x008377F3),
+                                                    color: Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -915,9 +915,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
+                                                          color: Color(0xFF1B5E20),
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -949,7 +947,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        5.0, 0.0, 0.0, 0.0),
+                                                        0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
@@ -969,16 +967,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                   },
                                                   text: 'IPVA',
                                                   options: FFButtonOptions(
-                                                    height: 20.0,
+                                                    height: 26.0,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 0.0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0x008377F3),
+                                                    color: Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -987,9 +985,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
+                                                          color: Color(0xFF1B5E20),
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1002,6 +998,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     elevation: 0.0,
                                                     borderSide: BorderSide(
                                                       color: Color(0x00101213),
+                                                      width: 0.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -1020,7 +1017,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        5.0, 0.0, 0.0, 0.0),
+                                                        0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
@@ -1040,16 +1037,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                   },
                                                   text: 'Licenciamento',
                                                   options: FFButtonOptions(
-                                                    height: 20.0,
+                                                    height: 26.0,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 0.0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0x008377F3),
+                                                    color: Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1058,9 +1055,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
+                                                          color: Color(0xFF1B5E20),
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1073,6 +1068,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     elevation: 0.0,
                                                     borderSide: BorderSide(
                                                       color: Color(0x00101213),
+                                                      width: 0.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -1091,7 +1087,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        5.0, 0.0, 0.0, 0.0),
+                                                        0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
@@ -1111,16 +1107,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                   },
                                                   text: 'Multas',
                                                   options: FFButtonOptions(
-                                                    height: 20.0,
+                                                    height: 26.0,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 0.0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0x008377F3),
+                                                    color: Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1129,9 +1125,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
+                                                          color: Color(0xFF1B5E20),
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1144,6 +1138,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     elevation: 0.0,
                                                     borderSide: BorderSide(
                                                       color: Color(0x00101213),
+                                                      width: 0.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -1162,12 +1157,11 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        5.0, 0.0, 0.0, 0.0),
+                                                        0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
-                                                      VencimentosWidget
-                                                          .routeName,
+                                                      VencimentosWidget.routeName,
                                                       extra: <String, dynamic>{
                                                         '__transition_info__':
                                                             TransitionInfo(
@@ -1183,16 +1177,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                   },
                                                   text: 'Vencimentos',
                                                   options: FFButtonOptions(
-                                                    height: 20.0,
+                                                    height: 26.0,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 0.0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0x008377F3),
+                                                    color: Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1201,9 +1195,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
+                                                          color: Color(0xFF1B5E20),
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1216,6 +1208,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     elevation: 0.0,
                                                     borderSide: BorderSide(
                                                       color: Color(0x00101213),
+                                                      width: 0.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -1234,7 +1227,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        5.0, 0.0, 0.0, 0.0),
+                                                        0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     context.goNamed(
@@ -1254,16 +1247,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                   },
                                                   text: 'Seguros',
                                                   options: FFButtonOptions(
-                                                    height: 20.0,
+                                                    height: 26.0,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 0.0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0x008377F3),
+                                                    color: Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1272,9 +1265,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
+                                                          color: Color(0xFF1B5E20),
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1287,6 +1278,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     elevation: 0.0,
                                                     borderSide: BorderSide(
                                                       color: Color(0x00101213),
+                                                      width: 0.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -1302,7 +1294,8 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
