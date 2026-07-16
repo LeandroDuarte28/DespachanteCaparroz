@@ -7,8 +7,9 @@ Este arquivo documenta as alterações realizadas em resposta às solicitações
 ## 📋 Lista de Ajustes (16/07/2026)
 
 ### 💻 Layout e Navegação Mobile
-1. **Feedback Visual ao Clicar no Menu Mobile**:
-   * Os 7 botões do menu exibido quando a página é acessada pelo celular (`Consulte seus débitos`, `Nossa História`, `IPVA`, `Licenciamento`, `Multas`, `Vencimentos` e `Seguros`) foram ajustados para que ao clicar (`onPressed` / touch / hover), o botão adquira uma tonalidade de verde mais escuro (`Color(0xFFA5D6A7)` via `splashColor` e `hoverColor`), mantendo o texto em verde escuro legível (`Color(0xFF1B5E20)`).
+1. **Feedback Visual Contínuo ao Clicar no Menu Mobile**:
+   * Os 7 botões do menu exibido quando o site é acessado pelo celular (`Consulte seus débitos`, `Nossa História`, `IPVA`, `Licenciamento`, `Multas`, `Vencimentos` e `Seguros`) foram reestruturados para que, ao serem clicados, o botão selecionado fique marcado de forma contínua com verde mais escuro (`Color(0xFFA5D6A7)`) até que o usuário clique em outro botão, mantendo o texto em verde escuro legível (`Color(0xFF1B5E20)`).
+   * Foi implementada a detecção dinâmica da rota ativa (`_isMobileButtonActive`) consultando o estado do `GoRouter` (`GoRouter.of(context)` / `GoRouterState.of(context)`) em conjunto com o estado reativo (`_activeMobileRoute`), garantindo uma resposta imediata ao toque e persistente em cada tela navegada.
    * **Arquivo alterado:**
      * `lib/components/top_bar_widget.dart`
 

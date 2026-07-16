@@ -19,6 +19,33 @@ class TopBarWidget extends StatefulWidget {
 
 class _TopBarWidgetState extends State<TopBarWidget> {
   late TopBarModel _model;
+  String? _activeMobileRoute;
+
+  bool _isMobileButtonActive(String routeName, String routePath) {
+    if (_activeMobileRoute != null) {
+      if (_activeMobileRoute == routeName || _activeMobileRoute == routePath) {
+        return true;
+      }
+    }
+    try {
+      final router = GoRouter.of(context);
+      final location = router.routeInformationProvider.value.uri.path;
+      if (location == routePath) return true;
+      if ((location == '/' || location == '') && routePath == '/consulte_debitos') return true;
+    } catch (_) {}
+    try {
+      final state = GoRouterState.of(context);
+      if (state.name == routeName) return true;
+      if (state.uri.path == routePath) return true;
+      if ((state.uri.path == '/' || state.uri.path == '') && routePath == '/consulte_debitos') return true;
+    } catch (_) {}
+    try {
+      final route = ModalRoute.of(context)?.settings.name;
+      if (route != null && (route == routeName || route == routePath)) return true;
+      if ((route == '/' || route == '') && routePath == '/consulte_debitos') return true;
+    } catch (_) {}
+    return false;
+  }
 
   @override
   void setState(VoidCallback callback) {
@@ -810,6 +837,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
+                                                    safeSetState(() => _activeMobileRoute = ConsulteDebitosWidget.routeName);
                                                     context.goNamed(
                                                       ConsulteDebitosWidget.routeName,
                                                       extra: <String, dynamic>{
@@ -836,7 +864,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFE8F5E9),
+                                                    color: _isMobileButtonActive(ConsulteDebitosWidget.routeName, ConsulteDebitosWidget.routePath) ? Color(0xFFA5D6A7) : Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -878,6 +906,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
+                                                    safeSetState(() => _activeMobileRoute = HomeWidget.routeName);
                                                     context.goNamed(
                                                       HomeWidget.routeName,
                                                       extra: <String, dynamic>{
@@ -904,7 +933,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFE8F5E9),
+                                                    color: _isMobileButtonActive(HomeWidget.routeName, HomeWidget.routePath) ? Color(0xFFA5D6A7) : Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -946,6 +975,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
+                                                    safeSetState(() => _activeMobileRoute = IpvaWidget.routeName);
                                                     context.goNamed(
                                                       IpvaWidget.routeName,
                                                       extra: <String, dynamic>{
@@ -972,7 +1002,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFE8F5E9),
+                                                    color: _isMobileButtonActive(IpvaWidget.routeName, IpvaWidget.routePath) ? Color(0xFFA5D6A7) : Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1014,6 +1044,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
+                                                    safeSetState(() => _activeMobileRoute = LicenciamentoWidget.routeName);
                                                     context.goNamed(
                                                       LicenciamentoWidget.routeName,
                                                       extra: <String, dynamic>{
@@ -1040,7 +1071,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFE8F5E9),
+                                                    color: _isMobileButtonActive(LicenciamentoWidget.routeName, LicenciamentoWidget.routePath) ? Color(0xFFA5D6A7) : Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1082,6 +1113,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
+                                                    safeSetState(() => _activeMobileRoute = MultasWidget.routeName);
                                                     context.goNamed(
                                                       MultasWidget.routeName,
                                                       extra: <String, dynamic>{
@@ -1108,7 +1140,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFE8F5E9),
+                                                    color: _isMobileButtonActive(MultasWidget.routeName, MultasWidget.routePath) ? Color(0xFFA5D6A7) : Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1150,6 +1182,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
+                                                    safeSetState(() => _activeMobileRoute = VencimentosWidget.routeName);
                                                     context.goNamed(
                                                       VencimentosWidget.routeName,
                                                       extra: <String, dynamic>{
@@ -1176,7 +1209,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFE8F5E9),
+                                                    color: _isMobileButtonActive(VencimentosWidget.routeName, VencimentosWidget.routePath) ? Color(0xFFA5D6A7) : Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1218,6 +1251,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         0.0, 0.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
+                                                    safeSetState(() => _activeMobileRoute = SeguroWidget.routeName);
                                                     context.goNamed(
                                                       SeguroWidget.routeName,
                                                       extra: <String, dynamic>{
@@ -1244,7 +1278,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFE8F5E9),
+                                                    color: _isMobileButtonActive(SeguroWidget.routeName, SeguroWidget.routePath) ? Color(0xFFA5D6A7) : Color(0xFFE8F5E9),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
