@@ -4,7 +4,17 @@ Este arquivo documenta as alterações realizadas em resposta às solicitações
 
 ---
 
-## 📋 Lista de Ajustes
+## 📋 Lista de Ajustes (16/07/2026)
+
+### 💻 Layout e Navegação Mobile
+1. **Feedback Visual ao Clicar no Menu Mobile**:
+   * Os 7 botões do menu exibido quando a página é acessada pelo celular (`Consulte seus débitos`, `Nossa História`, `IPVA`, `Licenciamento`, `Multas`, `Vencimentos` e `Seguros`) foram ajustados para que ao clicar (`onPressed` / touch / hover), o botão adquira uma tonalidade de verde mais escuro (`Color(0xFFA5D6A7)` via `splashColor` e `hoverColor`), mantendo o texto em verde escuro legível (`Color(0xFF1B5E20)`).
+   * **Arquivo alterado:**
+     * `lib/components/top_bar_widget.dart`
+
+---
+
+## 📋 Lista de Ajustes (Anteriores)
 
 ### 💻 Layout e Navegação
 1. **Remoção do Menu Hambúrguer no Desktop**:

@@ -863,14 +863,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    splashColor:
+                                                        Color(0xFFA5D6A7),
                                                     hoverColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
+                                                        Color(0xFFA5D6A7),
                                                     hoverTextColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                        Color(0xFF1B5E20),
                                                   ),
                                                 ),
                                               ),
@@ -933,14 +931,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    splashColor:
+                                                        Color(0xFFA5D6A7),
                                                     hoverColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
+                                                        Color(0xFFA5D6A7),
                                                     hoverTextColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                        Color(0xFF1B5E20),
                                                   ),
                                                 ),
                                               ),
@@ -1003,14 +999,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    splashColor:
+                                                        Color(0xFFA5D6A7),
                                                     hoverColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
+                                                        Color(0xFFA5D6A7),
                                                     hoverTextColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                        Color(0xFF1B5E20),
                                                   ),
                                                 ),
                                               ),
@@ -1073,14 +1067,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    splashColor:
+                                                        Color(0xFFA5D6A7),
                                                     hoverColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
+                                                        Color(0xFFA5D6A7),
                                                     hoverTextColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                        Color(0xFF1B5E20),
                                                   ),
                                                 ),
                                               ),
@@ -1143,14 +1135,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    splashColor:
+                                                        Color(0xFFA5D6A7),
                                                     hoverColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
+                                                        Color(0xFFA5D6A7),
                                                     hoverTextColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                        Color(0xFF1B5E20),
                                                   ),
                                                 ),
                                               ),
@@ -1213,14 +1203,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    splashColor:
+                                                        Color(0xFFA5D6A7),
                                                     hoverColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
+                                                        Color(0xFFA5D6A7),
                                                     hoverTextColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                        Color(0xFF1B5E20),
                                                   ),
                                                 ),
                                               ),
@@ -1283,14 +1271,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    splashColor:
+                                                        Color(0xFFA5D6A7),
                                                     hoverColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
+                                                        Color(0xFFA5D6A7),
                                                     hoverTextColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                        Color(0xFF1B5E20),
                                                   ),
                                                 ),
                                               ),
